@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 
 .container-input {
   display: flex;
@@ -6,7 +6,6 @@
   border-radius: 2.5px;
   background-color: #41197F;
   box-shadow: 5px 5px 5px 0px #0000002c;
-  /* margin: auto; */
   width: 300px;
 }
 .shearch {
@@ -17,12 +16,11 @@
 .btn{ 
   background-color: #41197F;
   border: none;
-  /* font-family: 'Ubuntu Mono', monospace; */
   font-weight: 700;
   color: #EEEEEE;
-}
+} */
 /* REFERENCIA: https://pt.stackoverflow.com/questions/5216/como-remover-borda-dos-input-e-textarea-de-todos-os-browsers-quando-clicado */
-textarea:focus, input:focus, select:focus {
+/* textarea:focus, input:focus, select:focus {
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
@@ -40,4 +38,4 @@ textarea:focus, input:focus, select:focus {
   justify-content: flex-start;
   row-gap: 50px;
   height: 90vh;
-}
+} */
