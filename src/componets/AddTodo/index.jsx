@@ -4,7 +4,7 @@ import NewTodo from '../NewTodo';
 
 function AddTodo() {
   const [task, setTask] = useState('');
-  const [listask, setLisTask] = useState([]);
+  const [listTask, setLisTask] = useState([]);
 
   const handleInputChange = ({ target }) => {
     const { value } = target;
@@ -13,14 +13,14 @@ function AddTodo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLisTask([...listask, task]);
+    setLisTask([...listTask, task]);
     setTask('');
   };
 
   return (
-    <section>
+    <main className="container-content">
       <form
-        className="container"
+        className="container-input"
         onSubmit={handleSubmit}
       >
         <input
@@ -38,8 +38,15 @@ function AddTodo() {
           Add Todo
         </button>
       </form>
-      <NewTodo />
-    </section>
+      <section>
+        {
+          listTask.map((item) => (
+            <NewTodo todo={item} />
+          ))
+        }
+      </section>
+
+    </main>
   );
 }
 
