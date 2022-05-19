@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 
-.container {
+.container-input {
   display: flex;
   border: solid 2px #41197F;
   border-radius: 2.5px;
@@ -17,7 +17,7 @@
 .btn{ 
   background-color: #41197F;
   border: none;
-  font-family: 'Ubuntu Mono', monospace;
+  /* font-family: 'Ubuntu Mono', monospace; */
   font-weight: 700;
   color: #EEEEEE;
 }
@@ -27,3 +27,17 @@ textarea:focus, input:focus, select:focus {
   border: 0 none;
   outline: 0;
 } 
+
+.todo-list {
+  border: solid 1px red;
+}
+
+.container-content {
+  border: solid 1px red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 50px;
+  height: 90vh;
+}

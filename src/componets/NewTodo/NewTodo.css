@@ -7,8 +7,11 @@
   width: 50vw;
   height: 50px;
   background-color: #036B52;
+  box-shadow: 5px 5px 5px 0px #0000002c;
   color: #EEEEEE;
   margin: auto;
+  margin-bottom: 25px;
+
 }
 
 .check-task {
