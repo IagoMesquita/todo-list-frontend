@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './addTodo.css';
+import NewTodo from '../NewTodo';
 
 function AddTodo() {
   const [task, setTask] = useState('');
@@ -24,6 +25,7 @@ function AddTodo() {
       >
         <input
           className="shearch"
+          placeholder="Sua tarefa"
           type="text"
           name="todo-input"
           value={task}
@@ -36,7 +38,7 @@ function AddTodo() {
           Add Todo
         </button>
       </form>
-
+      <NewTodo />
     </section>
   );
 }
