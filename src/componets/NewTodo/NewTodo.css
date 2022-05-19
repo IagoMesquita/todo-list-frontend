@@ -1,0 +1,33 @@
+.new-todo {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+
+  width: 50vw;
+  height: 50px;
+  background-color: #036B52;
+  box-shadow: 5px 5px 5px 0px #0000002c;
+  color: #EEEEEE;
+  margin: auto;
+  margin-bottom: 25px;
+
+}
+
+.check-task {
+  /* border: 1px solid red; */
+  width: 38vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.del-edit {
+  /* border: 1px solid red; */
+  width: 110px;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 30px;
+
+}
