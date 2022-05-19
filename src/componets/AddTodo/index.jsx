@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './addTodo.css';
 
 function AddTodo() {
   const [task, setTask] = useState('');
@@ -17,19 +18,25 @@ function AddTodo() {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form
+        className="container"
+        onSubmit={handleSubmit}
+      >
         <input
+          className="shearch"
           type="text"
           name="todo-input"
           value={task}
           onChange={handleInputChange}
         />
         <button
+          className="btn"
           type="submit"
         >
           Add Todo
         </button>
       </form>
+
     </section>
   );
 }
