@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './addTodo.css';
-import NewTodo from '../NewTodo';
 
 function AddTodo() {
   const [task, setTask] = useState('');
-  const [listTask, setLisTask] = useState([]);
+  const [listask, setLisTask] = useState([]);
 
   const handleInputChange = ({ target }) => {
     const { value } = target;
@@ -13,19 +12,18 @@ function AddTodo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLisTask([...listTask, task]);
+    setLisTask([...listask, task]);
     setTask('');
   };
 
   return (
-    <main className="container-content">
+    <section>
       <form
-        className="container-input"
+        className="container"
         onSubmit={handleSubmit}
       >
         <input
           className="shearch"
-          placeholder="Sua tarefa"
           type="text"
           name="todo-input"
           value={task}
@@ -38,15 +36,8 @@ function AddTodo() {
           Add Todo
         </button>
       </form>
-      <section>
-        {
-          listTask.map((item) => (
-            <NewTodo todo={item} />
-          ))
-        }
-      </section>
 
-    </main>
+    </section>
   );
 }
 
