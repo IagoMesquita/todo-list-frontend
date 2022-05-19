@@ -1,4 +1,4 @@
-.new-todo {
+/* .new-todo {
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -15,7 +15,6 @@
 }
 
 .check-task {
-  /* border: 1px solid red; */
   width: 38vw;
   display: flex;
   justify-content: flex-start;
@@ -24,10 +23,9 @@
 }
 
 .del-edit {
-  /* border: 1px solid red; */
   width: 110px;
   display: flex;
   justify-content: flex-end;
   column-gap: 30px;
 
-}
+} */
