@@ -6,10 +6,12 @@ import './NewTodo.css';
 function NewTodo({ todo, listTodo }) {
   const [listTask, setListTask] = listTodo;
   const [edit, setEdit] = useState(true);
+
   const excludeTodo = ({ target }) => {
     const newList = listTask
       .filter((item) => item.id !== +target.value);
     setListTask(newList);
+    localStorage.setItem('tasks', JSON.stringify(newList));
   };
 
   return (
