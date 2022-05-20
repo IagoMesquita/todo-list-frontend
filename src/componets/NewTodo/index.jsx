@@ -1,19 +1,44 @@
+/* eslint-disable operator-linebreak */
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
 import './NewTodo.css';
 
-function NewTodo({ todo }) {
+function NewTodo({ todo, listTodo }) {
+  const [listTask, setListTask] = listTodo;
+  const [edit, setEdit] = useState(true);
+  const excludeTodo = ({ target }) => {
+    const newList = listTask
+      .filter((item) => item.id !== +target.value);
+    setListTask(newList);
+  };
+
   return (
     <div className="new-todo">
       <div className="check-task">
-        <input type="checkbox" name="" id="" />
-        <p>{todo}</p>
+        <select name="status" id="status">
+          <option value="pen">Pendente</option>
+          <option value="and">Em andamento</option>
+          <option value="pro">Pronto</option>
+        </select>
+        {
+          edit ? (
+            <p>
+              { todo.task }
+            </p>
+          )
+            :
+            <input type="text" value={todo.task} />
+        }
       </div>
       <div className="del-edit">
-        <button type="button">
-          <i className="bi bi-x-circle" />
+        <button
+          type="button"
+          onClick={excludeTodo}
+          value={todo.id}
+        >
+          x
         </button>
-        <button type="button">
+        <button type="button" onClick={() => setEdit(!edit)}>
           <i className="bi bi-pencil-square" />
         </button>
       </div>
@@ -22,7 +47,12 @@ function NewTodo({ todo }) {
 }
 
 NewTodo.propTypes = {
-  todo: PropTypes.string.isRequired,
+  listTodo: PropTypes.arrayOf().isRequired,
+  todo: PropTypes.shape({
+    id: PropTypes.number,
+    status: PropTypes.string,
+    task: PropTypes.string,
+  }).isRequired,
 };
 
 export default NewTodo;
