@@ -1,18 +1,17 @@
-// import React from 'react';
-// import {
-//   screen, render, expect,
-// } from '@testing-library/react';
-// import '@testing-library/jest-dom';
-// import App from '../App';
+import React from 'react';
+import { screen, render } from '@testing-library/react';
+import App from '../App';
 
-// // let describe;
-// // let it;
+describe('Verifica componente na tela', () => {
+  it('se renderiza input', () => {
+    render(<App />);
+    const input = screen.getByPlaceholderText('Sua tarefa');
+    expect(input).toBeInTheDocument();
+  });
 
-// describe('Verifica componente na tela', () => {
-//   it('se renderiza input', () => {
-//     render(<App />);
-//     const input = screen.getByRole('textbox', /todo-input/i);
-//     console.log('INPUT', input);
-//     expect(input).toBeInTheDocument();
-//   });
-// });
+  it('se renderiza botão de adicionar nova tarefa', () => {
+    render(<App />);
+    const btnText = screen.getByRole('button', { name: 'Add Todo' });
+    expect(btnText).toBeInTheDocument();
+  });
+});
