@@ -3,8 +3,10 @@ import './addTodo.css';
 import NewTodo from '../NewTodo';
 
 function AddTodo() {
+  const [id, setId] = useState(0);
+
   const [task, setTask] = useState('');
-  const [listTask, setLisTask] = useState([]);
+  const [listTask, setListTask] = useState([]);
 
   const handleInputChange = ({ target }) => {
     const { value } = target;
@@ -13,8 +15,10 @@ function AddTodo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLisTask([...listTask, task]);
+    if (!task) return;
+    setListTask([...listTask, { id, task, status: 'Pendente' }]);
     setTask('');
+    setId(id + 1);
   };
 
   return (
@@ -41,7 +45,11 @@ function AddTodo() {
       <section>
         {
           listTask.map((item) => (
-            <NewTodo todo={item} />
+            <NewTodo
+              key={item.id}
+              todo={item}
+              listTodo={[listTask, setListTask]}
+            />
           ))
         }
       </section>
