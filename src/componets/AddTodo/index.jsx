@@ -4,7 +4,6 @@ import NewTodo from '../NewTodo';
 
 function AddTodo() {
   const [id, setId] = useState(0);
-
   const [task, setTask] = useState('');
   const [listTask, setListTask] = useState([]);
 
@@ -16,7 +15,10 @@ function AddTodo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!task) return;
-    setListTask([...listTask, { id, task, status: 'Pendente' }]);
+    setListTask([...listTask, { id, task }]);
+    const arrayOfTask = JSON.parse(localStorage.getItem('tasks')) || [];
+    arrayOfTask.push({ id, task });
+    localStorage.setItem('tasks', JSON.stringify(arrayOfTask));
     setTask('');
     setId(id + 1);
   };
